@@ -19,6 +19,8 @@ def send_log(message):
                 "Content-Type": "application/json"
             }
         )
+        print(f"Log sent. Status: {response.status_code}, Response: {response.text}")
+
     except Exception as e:
         print(f"Log error: {e}")
 
