@@ -19,6 +19,9 @@ def send_log(message):
                 "Content-Type": "application/json"
             }
         )
+        url = f"{os.environ['OPENOBSERVE_URL']}/api/{os.environ['OPENOBSERVE_ORG']}/{os.environ['OPENOBSERVE_STREAM']}/_json"
+        print("Sending to URL:", url, flush=True)
+
         print(f"Log sent. Status: {response.status_code}, Response: {response.text}",flush=True)
 
     except Exception as e:
