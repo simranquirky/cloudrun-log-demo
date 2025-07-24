@@ -28,6 +28,11 @@ def send_log(message):
 def home():
     send_log('Homepage visited')
     return 'Hello from Cloud Run'
+    
+@app.route('/test-log')
+def test_log():
+    send_log('Test log from /test-log route')
+    return 'Sent test log!'
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
