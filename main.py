@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 def send_log(message):
     try:
-        auth = os.environ[OPENOBSERVE_AUTH_KEY']
+        auth = os.environ['OPENOBSERVE_AUTH_KEY']
         requests.post(
             f"{os.environ['OPENOBSERVE_URL']}/api/{os.environ['OPENOBSERVE_ORG']}/{os.environ['OPENOBSERVE_STREAM']}/_json",
             json=[{
